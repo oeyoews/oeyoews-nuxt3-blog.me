@@ -14,7 +14,7 @@ export default defineNuxtConfig({
       // search: true,
     },
     highlight: {
-      langs: ['js', 'javascript', 'ts', 'tsx', 'typescript'],
+      langs: ['js', 'javascript', 'ts', 'tsx', 'typescript', 'css', 'html'],
       theme: {
         default: 'one-dark-pro',
         // dark: 'github-dark-dimmed',
