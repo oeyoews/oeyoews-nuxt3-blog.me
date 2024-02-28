@@ -3,10 +3,11 @@
     <div class="lg:flex mx-auto prose max-w-none prose-gray dark:prose-invert">
       <div class="text-center mx-20 lg:my-20">
         <div class="sticky top-5 flex flex-col gap-4">
-          <div
-            class="size-32 bg-cover bg-center rounded-full inline-block mx-auto"
-            style="background-image: url(/oeyoews.jpeg)"></div>
           <div>
+            <NuxtImg
+              src="/oeyoews.jpeg"
+              alt="oeyoews"
+              class="size-32 bg-cover bg-center rounded-full inline-block mx-auto" />
             <h1 class="font-bold text-2xl">oeyoews</h1>
           </div>
           <div class="flex gap-4 justify-center">
