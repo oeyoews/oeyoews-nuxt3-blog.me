@@ -11,15 +11,15 @@
           </div>
           <div class="flex gap-4 justify-center">
             <NuxtLink href="https://twitter.com/oeyoews" target="_blank">
-              <Icon name="uil:twitter" color="black" size="24" />
+              <Icon name="uil:twitter" color="" size="24" />
             </NuxtLink>
 
             <NuxtLink href="https://github.com/oeyoews" target="_blank">
-              <Icon name="uil:github" color="black" size="24" />
+              <Icon name="uil:github" color="" size="24" />
             </NuxtLink>
 
             <NuxtLink href="https://neotw.vercel.app" target="_blank">
-              <Icon name="i-simple-icons:tiddlywiki" color="black" size="24" />
+              <Icon name="i-simple-icons:tiddlywiki" color="" size="24" />
             </NuxtLink>
           </div>
           <div class="text-slate-500 text-sm my-4">Blog Since 2023</div>
