@@ -48,4 +48,4 @@ components/test
 content/test.js
 content/test.ts
 .nuxt/
-content/
+# content/
