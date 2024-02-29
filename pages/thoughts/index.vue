@@ -4,6 +4,7 @@ let pages = ref(0);
 let titles = ref<string[]>([]);
 
 const { data: datainfo, pending: infoPending } = await useFetch('/api/info', {
+  // NOTE:
   server: true, // Enable server-side rendering, but if not enable how to fix that
   method: 'GET',
   cache: 'force-cache',
@@ -31,7 +32,7 @@ titles.value = issues.value.map((issue) => issue.title);
 
 <template>
   <div v-for="post in issues">
-    <NuxtLink :to="`/thoughts/${post.id}`" class="no-underline">
+    <NuxtLink :to="`/thoughts/${post.number}`" class="no-underline">
       <h2
         class="flex flex-col justify-between rounded p-6 text-base my-8 dark:bg-[#2d333b] hover:shadow-sm bg-transparent border-[#d0d7de] dark:border-[#444c56] border hover:outline outline-[#d0d7de] hover:outline-1 dark:outline-[#444c56] border-solid overflow-auto">
         {{ post.title }}

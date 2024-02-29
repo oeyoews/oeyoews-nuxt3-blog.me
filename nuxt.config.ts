@@ -24,7 +24,7 @@ export default defineNuxtConfig({
         { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
       ],
       script: [],
-      noscript: [{ children: 'JavaScript is required' }],
+      // noscript: [{ children: 'JavaScript is required' }],
       bodyAttrs: {
         class: 'text-black bg-white dark:text-[#cdd9e5] dark:bg-[#1c2128]',
       },

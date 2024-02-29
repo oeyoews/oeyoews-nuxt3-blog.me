@@ -18,3 +18,4 @@
 * xxx.post
 * toploader
 * loadmore
+* ip 请求限速

@@ -2,25 +2,18 @@
 const { slug } = useRoute().params;
 import VueMarkdown from '@/components/Markdown';
 
-let issues = ref<Issue[]>([]);
-let pages = ref(0);
-
-const { data: datainfo, pending: infoPending } = await useFetch('/api/info', {
+let { data } = await useFetch(`/api/id/${slug}`, {
   server: true, // Enable server-side rendering, but if not enable how to fix that
   method: 'GET',
   cache: 'force-cache',
+  mode: 'cors',
 });
 
-pages.value = Math.ceil(datainfo.value as number) / 30;
+const issue = data.value as unknown as Issue;
 
-for (let i = 0; i < pages.value; i++) {
-  const { data } = await useFetch(`/api/issue/${i + 1}`, {
-    cache: 'force-cache',
-  });
-  issues.value.push(...(data.value as Issue[]));
-}
-
-const issue = issues.value.find((issue) => issue.slug === slug);
+useHead({
+  title: issue.title,
+});
 </script>
 
 <template>
