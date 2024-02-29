@@ -1,13 +1,13 @@
 <template>
   <main>
-    <div class="lg:flex mx-auto prose max-w-none prose-gray dark:prose-invert">
-      <div class="text-center mx-20 lg:my-20">
+    <div class="lg:flex mx-auto not-prose max-w-none dark:prose-invert">
+      <div class="text-center mx-20 lg:my-20 !text-base">
         <div class="sticky top-5 flex flex-col gap-4">
           <div>
             <NuxtImg
               src="/oeyoews.jpeg"
               alt="oeyoews"
-              class="size-32 bg-cover bg-center rounded-full inline-block mx-auto" />
+              class="size-32 bg-cover bg-center rounded-full inline-block mx-auto my-0" />
             <h1 class="font-bold text-2xl">oeyoews</h1>
           </div>
           <div class="flex gap-4 justify-center">

@@ -1,5 +1,6 @@
 <template>
   <NuxtLayout>
+    <Nav />
     <div
       class="container mx-auto max-w-4xl py-8 px-4 prose dark:prose-invert min-h-screen">
       <NuxtPage />
