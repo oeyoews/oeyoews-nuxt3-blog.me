@@ -9,7 +9,9 @@ export default defineNuxtConfig({
   typescript: {
     // typeCheck: true,
   },
+  ssr: true,
   runtimeConfig: {
+    GITHUB_TOKEN: process.env.NUXT_GITHUB_TOKEN,
     public: {
       apiBase: '/api',
     },
