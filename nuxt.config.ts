@@ -11,7 +11,7 @@ export default defineNuxtConfig({
   },
   ssr: true,
   runtimeConfig: {
-    GITHUB_TOKEN: process.env.NUXT_GITHUB_TOKEN,
+    GITHUB_TOKEN: '',
     public: {
       apiBase: '/api',
     },
