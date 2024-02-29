@@ -9,7 +9,7 @@ export default defineEventHandler(async (event) => {
   const headers = {
     Accept: 'application/vnd.github+json',
     'Content-Type': 'application/json',
-    // Authorization: `Bearer ${GITHUB_TOKEN}`,
+    Authorization: `Bearer ${GITHUB_TOKEN}`,
   };
 
   const data: any = await $fetch(
@@ -19,6 +19,7 @@ export default defineEventHandler(async (event) => {
       headers,
     }
   );
+
   if (!data.length) {
     return {
       message: '请求出错',

@@ -8,7 +8,7 @@ export default defineEventHandler(async (event) => {
   const headers = {
     Accept: 'application/vnd.github+json',
     'Content-Type': 'application/json',
-    // Authorization: `Bearer ${GITHUB_TOKEN}`,
+    Authorization: `Bearer ${GITHUB_TOKEN}`,
   };
 
   const data: any = await $fetch(

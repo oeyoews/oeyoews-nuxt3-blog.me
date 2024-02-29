@@ -7,7 +7,7 @@ export default defineNuxtConfig({
   }, */
   ssr: true,
   runtimeConfig: {
-    GITHUB_TOKEN: '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',
+    GITHUB_TOKEN: '',
     public: {
       apiBase: '/api',
     },
