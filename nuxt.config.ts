@@ -1,17 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  // vite: {
-  //   define: {
-  //     'process.env': '{}',
-  //   },
-  // },
-
-  typescript: {
-    // typeCheck: true,
-  },
+  /*   vite: {
+    define: {
+      'process.env': '{}',
+    },
+  }, */
   ssr: true,
   runtimeConfig: {
-    GITHUB_TOKEN: '',
+    GITHUB_TOKEN: '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',
     public: {
       apiBase: '/api',
     },

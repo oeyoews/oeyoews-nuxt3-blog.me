@@ -9,17 +9,16 @@ export default defineEventHandler(async (event) => {
   const headers = {
     Accept: 'application/vnd.github+json',
     'Content-Type': 'application/json',
-    Authorization: `Bearer ${GITHUB_TOKEN}`,
+    // Authorization: `Bearer ${GITHUB_TOKEN}`,
   };
 
-  const res: any = await fetch(
+  const data: any = await $fetch(
     'https://api.github.com/repos/oeyoews/neotw-tiddlers' +
       `/issues?page=${page}&per_page=30&state=closed`,
     {
       headers,
     }
   );
-  const data = await res.json();
   if (!data.length) {
     return {
       message: '请求出错',
