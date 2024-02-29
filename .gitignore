@@ -50,3 +50,4 @@ content/test.ts
 .nuxt/
 # content/
 .output
+.env
