@@ -18,6 +18,7 @@ const { slug } = useRoute().params;
         <h1 class="capitalize text-balance dark:text-[#cdd9e5] text-center">
           {{ doc.title }}
         </h1>
+        <hr />
         <ContentRenderer :value="doc" />
       </template>
     </ContentDoc>

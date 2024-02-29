@@ -1,6 +1,20 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: false },
+  // vite: {
+  //   define: {
+  //     'process.env': '{}',
+  //   },
+  // },
+
+  typescript: {
+    // typeCheck: true,
+  },
+  runtimeConfig: {
+    public: {
+      apiBase: '/api',
+    },
+  },
+  devtools: { enabled: true },
   modules: ['nuxt-icon', '@nuxt/content', '@nuxt/image'],
   css: ['~/assets/css/global.css'],
   postcss: {

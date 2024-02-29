@@ -49,3 +49,4 @@ content/test.js
 content/test.ts
 .nuxt/
 # content/
+.output

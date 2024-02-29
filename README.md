@@ -1,6 +1,6 @@
 ## 问题
 
-* layout 不支持热加载
+* layout, route 不支持热加载
 * use chinese title
 * 使用 nuxtpage 共享页面
 
@@ -12,3 +12,8 @@
 ## TODO
 
 * toc
+* github issue
+* 嵌套路由
+* 传参
+* xxx.post
+* toploader
