@@ -1,5 +1,7 @@
 export default defineEventHandler(async (event) => {
   const { GITHUB_TOKEN } = useRuntimeConfig(event);
+  // https://github.com/chansee97/issue-nuxt-blog/blob/main/api/index.ts
+  // const { VITE_OWNER, VITE_BLOGS_REPO } = import.meta.env;
 
   // @ts-ignore
   const page = event.context.params.slug;
@@ -18,6 +20,11 @@ export default defineEventHandler(async (event) => {
     }
   );
   const data = await res.json();
+  if (!data.length) {
+    return {
+      message: '请求出错',
+    };
+  }
 
   //   return data;
   return data.map((issue: Issue) => ({
