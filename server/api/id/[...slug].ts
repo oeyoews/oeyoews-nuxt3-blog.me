@@ -23,6 +23,13 @@ export default defineEventHandler(async (event) => {
       message: '请求出错',
     };
   }
+
+  const size = getsize(data);
+  console.log(
+    `issue: #${slug} ` + new Date() + ' ' + (size / 1024).toFixed(2),
+    'Kb'
+  );
+
   return {
     ...data,
     date: new Date(data.created_at),

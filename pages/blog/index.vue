@@ -11,11 +11,7 @@
                 class="mt-0 mb-2 truncate text-blance capitalize dark:text-[#cdd9e5] text-base">
                 {{ post.title }}
               </h2>
-              <div class="flex text-sm items-center text-gray-400">
-                <Icon name="carbon:calendar" color="" size="18" class="mr-2" />
-                <!-- TODO: why use string -->
-                {{ String(post.date).split(' ')[0] }}
-              </div>
+              <Time :time="String(post.date).split(' ')[0]" />
             </NuxtLink>
           </div>
         </div>

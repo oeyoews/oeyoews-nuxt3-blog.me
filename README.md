@@ -41,4 +41,4 @@ https://blog2s.vercel.app
 * usehead xx  | xxx
 * blog sort use script instead of html to organize
 * issue comment body
-* 重复代码组件封装 -->
+-->

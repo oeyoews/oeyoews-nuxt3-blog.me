@@ -14,12 +14,12 @@ const { slug } = useRoute().params;
       <template #empty>
         <small>空空如也！</small>
       </template>
-      <template #default="{ doc }">
-        <h1 class="capitalize text-balance dark:text-[#cdd9e5] text-center">
-          {{ doc.title }}
-        </h1>
-        <hr />
-        <ContentRenderer :value="doc" />
+      <template #default="{ doc: post }">
+        <ArticleH1> {{ post.title }} </ArticleH1>
+
+        <Time :time="String(post.date).split(' ')[0]" class="justify-center" />
+        <ArticleHr />
+        <ContentRenderer :value="post" />
       </template>
     </ContentDoc>
   </article>

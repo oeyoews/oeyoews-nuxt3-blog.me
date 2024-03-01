@@ -27,6 +27,9 @@ export default defineEventHandler(async (event) => {
     };
   }
 
+  const size = getsize(data);
+  console.log('[issue] ' + new Date() + ' ' + (size / 1024).toFixed(2), 'Kb');
+
   return data.map((issue: Issue) => ({
     ...issue,
     date: new Date(issue.created_at),

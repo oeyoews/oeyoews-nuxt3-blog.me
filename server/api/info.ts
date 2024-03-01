@@ -14,5 +14,8 @@ export default defineEventHandler(async (event) => {
     }
   );
 
+  const size = getsize(data);
+  console.log('[info] ' + new Date() + ' ' + (size / 1024).toFixed(2), 'Kb');
+
   return data.total_count;
 });

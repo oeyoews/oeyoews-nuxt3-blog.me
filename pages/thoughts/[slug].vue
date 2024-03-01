@@ -22,13 +22,9 @@ useHead({
 <template>
   <article
     class="py-6 max-w-none prose prose-gray dark:prose-invert prose-img:my-2 prose-img:rounded-md overflow-x-hidden dark:text-[#cdd9e5]">
-    <h2 v-if="issue?.title" class="text-center">{{ issue?.title }}</h2>
-
-    <div class="flex items-center justify-center">
-      <Icon name="carbon:calendar" color="" size="18" class="!mr-2" />
-      {{ issue?.date.toString().split('T')[0] }}
-    </div>
-    <hr class="my-0 mb-4" />
+    <ArticleH1>{{ issue?.title }}</ArticleH1>
+    <Time :time="issue?.date.toString().split('T')[0]!" />
+    <ArticleHr />
     <VueMarkdown :source="issue?.body" v-if="issue?.body" />
     <p v-else>Nothing</p>
   </article>
