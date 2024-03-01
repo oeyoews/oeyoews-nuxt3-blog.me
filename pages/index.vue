@@ -1,3 +1,7 @@
+<script setup lang="ts">
+// prerenderRoutes(['/']);
+</script>
+
 <template>
   <main>
     <div class="lg:flex mx-auto not-prose max-w-none dark:prose-invert">
