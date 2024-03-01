@@ -13,3 +13,16 @@
 .task-list-item {
   list-style: none !important;
 }
+
+table {
+  /* table-layout: fixed !important; */
+  overflow-wrap: anywhere;
+}
+
+svg {
+  display: inline-block;
+}
+
+table svg {
+  margin-right: 0.2em;
+}

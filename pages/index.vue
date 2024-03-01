@@ -35,7 +35,7 @@
           <div class="mx-auto text-sm">
             <div>
               <h2 class="font-bold my-4 text-md">Projects / 项目</h2>
-              <a href="/blog/">项目</a>
+              <a href="/project">项目</a>
             </div>
             <h2 class="font-bold my-4 text-md">Articles / 文章</h2>
             <div><a href="/blog">文章</a></div>
