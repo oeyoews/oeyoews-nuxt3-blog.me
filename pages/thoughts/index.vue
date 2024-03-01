@@ -3,9 +3,9 @@ let issues = ref<Issue[]>([]);
 let pages = ref(0);
 let titles = ref<string[]>([]);
 
-const { data: datainfo, pending: infoPending } = await useFetch('/api/info', {
+const { data: datainfo } = await useFetch('/api/info', {
   // NOTE:
-  server: true, // Enable server-side rendering, but if not enable how to fix that
+  server: false, // Enable server-side rendering, but if not enable how to fix that
   method: 'GET',
   cache: 'force-cache',
 });

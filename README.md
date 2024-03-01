@@ -18,4 +18,4 @@
 * xxx.post
 * toploader
 * loadmore
-* ip 请求限速
+* ip 请求限速，缓存问题

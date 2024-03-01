@@ -3,6 +3,7 @@ export default defineEventHandler(async (event) => {
   // https://github.com/chansee97/issue-nuxt-blog/blob/main/api/index.ts
   // const { VITE_OWNER, VITE_BLOGS_REPO } = import.meta.env;
 
+  // return GITHUB_TOKEN;
   // @ts-ignore
   const page = event.context.params.slug;
 
@@ -26,7 +27,6 @@ export default defineEventHandler(async (event) => {
     };
   }
 
-  //   return data;
   return data.map((issue: Issue) => ({
     ...issue,
     date: new Date(issue.created_at),
