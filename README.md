@@ -36,7 +36,6 @@ https://blog2s.vercel.app
 * 嵌套路由
 * 传参
 * xxx.post
-* loadmore
 * use degit to get content
 * usehead xx  | xxx
 * blog sort use script instead of html to organize

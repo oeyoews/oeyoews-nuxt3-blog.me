@@ -3,6 +3,8 @@ let issues = ref<Issue[]>([]);
 let pages = ref(0);
 let titles = ref<string[]>([]);
 
+const articles = useState('articles-thoughts', () => 10);
+
 // TODO: 移动端左滑返回修复
 const { data: datainfo } = await useFetch('/api/info', {
   server: true, // Enable server-side rendering, default is enabled
@@ -36,24 +38,27 @@ useHead({
 </script>
 
 <template>
-  <ArticleList v-for="post in issues" :key="post.number">
-    <NuxtLink :to="`/thoughts/${post.number}`" class="no-underline">
-      <ArticleH2> {{ post.title }} </ArticleH2>
-    </NuxtLink>
-    <div
-      class="flex space-x-2 text-gray-400 items-center justify-start text-sm">
-      <NuxtLink
-        :to="post.html_url"
-        target="_blank"
-        class="text-gray-400 flex items-center transition-all delay-100 underline group">
-        <Icon
-          name="carbon:logo-github"
-          color=""
-          size="18"
-          class="mr-2 group-hover:animate-spin" />
-        #{{ post.number }}
+  <template v-for="(post, index) in issues" :key="post.number">
+    <ArticleList v-if="index < articles">
+      <NuxtLink :to="`/thoughts/${post.number}`" class="no-underline">
+        <ArticleH2> {{ post.title }} </ArticleH2>
       </NuxtLink>
-      <Time :time="post.date.toString().split('T')[0]!" />
-    </div>
-  </ArticleList>
+      <div
+        class="flex space-x-2 text-gray-400 items-center justify-start text-sm">
+        <NuxtLink
+          :to="post.html_url"
+          target="_blank"
+          class="text-gray-400 flex items-center transition-all delay-100 underline group">
+          <Icon
+            name="carbon:logo-github"
+            color=""
+            size="18"
+            class="mr-2 group-hover:animate-spin" />
+          #{{ post.number }}
+        </NuxtLink>
+        <Time :time="post.date.toString().split('T')[0]!" />
+      </div>
+    </ArticleList>
+  </template>
+  <LoadMore @click="(n) => (articles += n)" v-if="articles < issues.length" />
 </template>
