@@ -1,7 +1,7 @@
 ## 个人博客
 
-React 版本：https://github.com/oeyoews/oeyoews.me
-Vue 版本：https://github.com/oeyoews/oeyoews-nuxt3-blog.me
+* React 版本：https://github.com/oeyoews/oeyoews.me
+* Vue 版本：https://github.com/oeyoews/oeyoews-nuxt3-blog.me
 
 <!-- ## 问题
 
