@@ -21,7 +21,7 @@ useHead({
 
 <template>
   <article
-    class="py-6 max-w-none prose prose-indigo dark:prose-invert prose-img:my-2 prose-img:rounded-md overflow-x-hidden dark:text-[#cdd9e5]">
+    class="py-6 max-w-none prose prose-gray dark:prose-invert prose-img:my-2 prose-img:rounded-md overflow-x-hidden dark:text-[#cdd9e5]">
     <h2 v-if="issue?.title" class="text-center">{{ issue?.title }}</h2>
 
     <div class="flex items-center justify-center">
