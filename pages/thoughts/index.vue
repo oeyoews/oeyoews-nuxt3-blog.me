@@ -1,7 +1,6 @@
 <script setup lang="ts">
 let issues = ref<Issue[]>([]);
 let pages = ref(0);
-let titles = ref<string[]>([]);
 
 const articles = useState('articles-thoughts', () => 10);
 
@@ -30,7 +29,15 @@ issues.value = issues.value.filter(
     )
 );
 
-titles.value = issues.value.map((issue) => issue.title);
+// NOTE: 如果列表查询 content 使用 命令式写法，下面代码可以省去，否则 html 中的 v-if 注释太多
+let slicedIssues = ref<Issue[]>([]);
+
+slicedIssues.value = issues.value.slice(0, articles.value);
+
+// 更新列表
+watchEffect(() => {
+  slicedIssues.value = issues.value.slice(0, articles.value);
+});
 
 useHead({
   title: 'Thoughts',
@@ -38,8 +45,8 @@ useHead({
 </script>
 
 <template>
-  <template v-for="(post, index) in issues" :key="post.number">
-    <ArticleList v-if="index < articles">
+  <template v-for="post in slicedIssues" :key="post.number">
+    <ArticleList>
       <NuxtLink :to="`/thoughts/${post.number}`" class="no-underline">
         <ArticleH2> {{ post.title }} </ArticleH2>
       </NuxtLink>

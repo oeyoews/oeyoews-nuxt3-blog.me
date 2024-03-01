@@ -1,5 +1,9 @@
 <script setup lang="ts">
 const articles = useState('articles-blog', () => 10);
+
+useHead({
+  title: 'Blog',
+});
 </script>
 
 <template>
