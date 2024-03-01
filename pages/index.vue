@@ -1,7 +1,3 @@
-<script setup lang="ts">
-// prerenderRoutes(['/']);
-</script>
-
 <template>
   <main>
     <div class="lg:flex mx-auto not-prose max-w-none dark:prose-invert">
@@ -35,10 +31,13 @@
           <div class="mx-auto text-sm">
             <div>
               <h2 class="font-bold my-4 text-md">Projects / 项目</h2>
-              <a href="/project">项目</a>
+              <NuxtLink to="/project">项目</NuxtLink>
             </div>
             <h2 class="font-bold my-4 text-md">Articles / 文章</h2>
-            <div><a href="/blog">文章</a></div>
+            <div class="flex items-center gap-2">
+              <Icon name="i-ph:article-bold" color="" size="18" />
+              <NuxtLink to="/blog"> 文章 </NuxtLink>
+            </div>
             <h2 class="font-bold my-4 text-md">ABOUT / 关于我</h2>
             <div class="text-gray-400">
               这个人很懒，什么也没留下 (coming ...)

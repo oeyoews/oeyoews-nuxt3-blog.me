@@ -8,9 +8,9 @@ const { slug } = useRoute().params;
     <template #empty class="">
       <ArticleH1>空空如也！</ArticleH1>
       <div class="flex items-center justify-center">
-        <NuxtLink to="/" class="hover:underline text-gray-400"
-          >回到首页
-          <Icon name="fa:home" color="" size="18" />
+        <NuxtLink to="/blog" class="hover:underline text-gray-400"
+          >回到博客
+          <Icon name="i-ph:article-bold" color="" size="18" />
         </NuxtLink>
       </div>
     </template>
