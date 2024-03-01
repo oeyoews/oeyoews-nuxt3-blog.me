@@ -6,7 +6,8 @@ let titles = ref<string[]>([]);
 const { data: datainfo } = await useFetch('/api/info', {
   server: true, // Enable server-side rendering, default is enabled
   method: 'GET',
-  cache: import.meta.dev ? 'default' : 'force-cache',
+  // cache: import.meta.dev ? 'default' : 'force-cache',
+  cache: 'force-cache',
 });
 
 pages.value = Math.ceil(datainfo.value as number) / 30;
@@ -14,7 +15,8 @@ pages.value = Math.ceil(datainfo.value as number) / 30;
 for (let i = 0; i < pages.value; i++) {
   const { data } = await useFetch(`/api/issue/${i + 1}`, {
     server: true,
-    cache: import.meta.dev ? 'default' : 'force-cache',
+    // cache: import.meta.dev ? 'default' : 'force-cache',
+    cache: 'force-cache',
   });
   issues.value.push(...(data.value as Issue[]));
 }
@@ -35,14 +37,9 @@ useHead({
 </script>
 
 <template>
-  <div
-    v-for="post in issues"
-    class="flex flex-col justify-between rounded p-6 text-base my-8 dark:bg-[#2d333b] hover:shadow-sm bg-transparent border-[#d0d7de] dark:border-[#444c56] border hover:outline outline-[#d0d7de] hover:outline-1 dark:outline-[#444c56] border-solid overflow-auto">
+  <ArticleList v-for="post in issues">
     <NuxtLink :to="`/thoughts/${post.number}`" class="no-underline">
-      <h1
-        class="mt-0 mb-2 truncate text-blance capitalize dark:text-[#cdd9e5] text-base">
-        {{ post.title }}
-      </h1>
+      <ArticleH2> {{ post.title }} </ArticleH2>
     </NuxtLink>
     <div
       class="flex space-x-2 text-gray-400 items-center justify-start text-sm">
@@ -59,5 +56,5 @@ useHead({
       </NuxtLink>
       <Time :time="post.date.toString().split('T')[0]!" />
     </div>
-  </div>
+  </ArticleList>
 </template>
