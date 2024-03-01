@@ -9,3 +9,7 @@
 .prose a {
   @apply decoration-[0.1em] no-underline underline-offset-4 transition-all decoration-neutral-400 dark:decoration-neutral-600;
 }
+
+.task-list-item {
+  list-style: none !important;
+}
