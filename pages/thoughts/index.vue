@@ -4,8 +4,7 @@ let pages = ref(0);
 let titles = ref<string[]>([]);
 
 const { data: datainfo } = await useFetch('/api/info', {
-  // NOTE:
-  server: false, // Enable server-side rendering, but if not enable how to fix that
+  server: true, // Enable server-side rendering, default is enabled
   method: 'GET',
   cache: 'force-cache',
 });
@@ -14,6 +13,7 @@ pages.value = Math.ceil(datainfo.value as number) / 30;
 
 for (let i = 0; i < pages.value; i++) {
   const { data } = await useFetch(`/api/issue/${i + 1}`, {
+    server: true,
     cache: 'force-cache',
   });
   issues.value.push(...(data.value as Issue[]));
