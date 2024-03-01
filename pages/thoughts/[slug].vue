@@ -20,12 +20,13 @@ useHead({
 </script>
 
 <template>
-  <article
-    class="py-6 max-w-none prose prose-gray dark:prose-invert prose-img:my-2 prose-img:rounded-md overflow-x-hidden dark:text-[#cdd9e5]">
+  <Article>
     <ArticleH1>{{ issue?.title }}</ArticleH1>
-    <Time :time="issue?.date.toString().split('T')[0]!" />
+    <Time
+      :time="issue?.date.toString().split('T')[0]!"
+      class="justify-center" />
     <ArticleHr />
     <VueMarkdown :source="issue?.body" v-if="issue?.body" />
     <p v-else>Nothing</p>
-  </article>
+  </Article>
 </template>

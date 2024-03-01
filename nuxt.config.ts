@@ -12,7 +12,7 @@ export default defineNuxtConfig({
       apiBase: '/api',
     },
   },
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   modules: [
     'nuxt-icon',
     '@nuxt/content',
