@@ -3,6 +3,13 @@
 * React 版本：https://github.com/oeyoews/oeyoews.me
 * Vue 版本：https://github.com/oeyoews/oeyoews-nuxt3-blog.me
 
+## 在线预览
+
+https://blog2s.vercel.app
+
+> [!NOTE]
+> 在线地址国内访问不稳定
+
 <!-- ## 问题
 
 * layout, route 不支持热加载
