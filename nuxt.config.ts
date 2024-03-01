@@ -13,7 +13,12 @@ export default defineNuxtConfig({
     },
   },
   devtools: { enabled: true },
-  modules: ['nuxt-icon', '@nuxt/content', '@nuxt/image'],
+  modules: [
+    'nuxt-icon',
+    '@nuxt/content',
+    '@nuxt/image',
+    // '@nuxt/fonts'
+  ],
   app: {
     head: {
       meta: [

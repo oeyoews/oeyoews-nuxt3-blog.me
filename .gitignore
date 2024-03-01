@@ -51,3 +51,4 @@ content/test.ts
 # content/
 .output
 .env
+.data
