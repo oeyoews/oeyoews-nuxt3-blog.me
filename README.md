@@ -11,8 +11,8 @@
 
 ## TODO
 
+* 中文路由
 * toc
-* github issue
 * 嵌套路由
 * 传参
 * xxx.post
