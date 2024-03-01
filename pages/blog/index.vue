@@ -3,6 +3,7 @@ const articles = useState('articles-blog', () => 10);
 
 useHead({
   title: 'Blog',
+  titleTemplate: '%s | oeyoews',
 });
 </script>
 

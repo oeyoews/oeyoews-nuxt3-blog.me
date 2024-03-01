@@ -41,6 +41,7 @@ watchEffect(() => {
 
 useHead({
   title: 'Thoughts',
+  titleTemplate: '%s | oeyoews',
 });
 </script>
 

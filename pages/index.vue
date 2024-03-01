@@ -1,3 +1,10 @@
+<script setup lang="ts">
+useHead({
+  title: 'Homepage',
+  titleTemplate: '%s | oeyoews',
+});
+</script>
+
 <template>
   <main>
     <div class="lg:flex mx-auto not-prose max-w-none dark:prose-invert">

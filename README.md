@@ -31,14 +31,14 @@ https://blog2s.vercel.app
 
 ## TODO
 
+* pwa and favicon for dev and chenge favicon
 * 中文路由
 * toc
 * 嵌套路由
 * 传参
-* xxx.post
+* xxx.post usage
 * use degit to get content
-* usehead xx  | xxx
 * blog sort use script instead of html to organize
-* issue comment body
+* issue comment body for github api
 * html 生成的 `<!--[->` how to remove
 -->
