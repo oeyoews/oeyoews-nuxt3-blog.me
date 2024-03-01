@@ -13,7 +13,7 @@
               </h2>
               <div class="flex text-sm items-center text-gray-400">
                 <Icon name="carbon:calendar" color="" size="18" class="mr-2" />
-                <!-- why use string -->
+                <!-- TODO: why use string -->
                 {{ String(post.date).split(' ')[0] }}
               </div>
             </NuxtLink>
