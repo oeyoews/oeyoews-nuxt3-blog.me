@@ -36,7 +36,7 @@ useHead({
 </script>
 
 <template>
-  <ArticleList v-for="post in issues">
+  <ArticleList v-for="post in issues" :key="post.number">
     <NuxtLink :to="`/thoughts/${post.number}`" class="no-underline">
       <ArticleH2> {{ post.title }} </ArticleH2>
     </NuxtLink>

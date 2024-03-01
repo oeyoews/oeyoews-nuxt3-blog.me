@@ -41,6 +41,5 @@ https://blog2s.vercel.app
 * usehead xx  | xxx
 * blog sort use script instead of html to organize
 * issue comment body
-* fragment usage
 * html 生成的 `<!--[->` how to remove
 -->
