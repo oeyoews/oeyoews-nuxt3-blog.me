@@ -16,5 +16,5 @@
 * 嵌套路由
 * 传参
 * xxx.post
-* toploader
 * loadmore
+* use degit to get content
