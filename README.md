@@ -1,4 +1,9 @@
-## 问题
+## 个人博客
+
+React 版本：https://github.com/oeyoews/oeyoews.me
+Vue 版本：https://github.com/oeyoews/oeyoews-nuxt3-blog.me
+
+<!-- ## 问题
 
 * layout, route 不支持热加载
 * use chinese title
@@ -19,3 +24,5 @@
 * loadmore
 * use degit to get content
 * usehead xx  | xxx
+* issue comment body
+* 重复代码组件封装 -->
