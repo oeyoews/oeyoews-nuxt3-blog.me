@@ -3,11 +3,11 @@ let issues = ref<Issue[]>([]);
 let pages = ref(0);
 let titles = ref<string[]>([]);
 
+// TODO: 移动端左滑返回修复
 const { data: datainfo } = await useFetch('/api/info', {
   server: true, // Enable server-side rendering, default is enabled
   method: 'GET',
-  // cache: import.meta.dev ? 'default' : 'force-cache',
-  cache: 'force-cache',
+  cache: import.meta.dev ? 'default' : 'force-cache',
 });
 
 pages.value = Math.ceil(datainfo.value as number) / 30;
@@ -15,8 +15,7 @@ pages.value = Math.ceil(datainfo.value as number) / 30;
 for (let i = 0; i < pages.value; i++) {
   const { data } = await useFetch(`/api/issue/${i + 1}`, {
     server: true,
-    // cache: import.meta.dev ? 'default' : 'force-cache',
-    cache: 'force-cache',
+    cache: import.meta.dev ? 'default' : 'force-cache',
   });
   issues.value.push(...(data.value as Issue[]));
 }
