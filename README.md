@@ -5,6 +5,12 @@
 * React 版本：https://github.com/oeyoews/oeyoews.me
 * Vue 版本：https://github.com/oeyoews/oeyoews-nuxt3-blog.me
 
+## 特性
+
+* [x] 支持本地 markdown 文件
+* [x] 支持使用 GitHub issue API
+<!-- * [x] 支持 json 数据源 -->
+
 ## 在线预览
 
 https://blog2s.vercel.app
