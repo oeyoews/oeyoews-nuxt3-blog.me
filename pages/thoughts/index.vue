@@ -57,9 +57,6 @@ useHead({
           class="mr-2 group-hover:animate-spin" />
         #{{ post.number }}
       </NuxtLink>
-      <time
-        datetime=""
-        class="block font-serif leading-none text-gray-400/60 text-sm"></time>
       <Icon name="carbon:calendar" color="" size="18" class="!mr-2" />
       {{ post.date.toString().split('T')[0] }}
     </div>

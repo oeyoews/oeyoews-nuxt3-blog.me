@@ -10,7 +10,7 @@ const { slug } = useRoute().params;
   <article
     class="py-6 max-w-none prose prose-indigo dark:prose-invert prose-img:my-2 prose-img:rounded-md overflow-x-hidden dark:text-[#cdd9e5]">
     <ContentDoc :path="`/${slug}`">
-      <template #not-found> nothing </template>
+      <template #not-found> Not Found! </template>
       <template #empty>
         <small>空空如也！</small>
       </template>

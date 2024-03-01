@@ -20,6 +20,8 @@ export default defineNuxtConfig({
     // '@nuxt/fonts'
   ],
   app: {
+    // TODO: bug for transition
+    // pageTransition: { name: 'page', mode: 'out-in' },
     head: {
       meta: [
         { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
@@ -43,8 +45,24 @@ export default defineNuxtConfig({
     },
   },
   content: {
+    // documentDriven: true,
+    markdown: {
+      toc: {
+        depth: 3,
+        searchDepth: 3,
+      },
+      // Object syntax can be used to override default options
+      // remarkPlugins: {
+      //   'remark-emoji': {
+      //     emoticon: true,
+      //   },
+      //   'remark-gfm': {},
+      // },
+    },
     experimental: {
-      // search: true,
+      search: {
+        indexed: false,
+      },
     },
     highlight: {
       langs: ['js', 'javascript', 'ts', 'tsx', 'typescript', 'css', 'html'],
