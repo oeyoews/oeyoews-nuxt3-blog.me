@@ -1,36 +1,45 @@
 <script setup lang="ts">
-const renderComponent = ref(false);
-const time = ref(new Date().toLocaleTimeString());
-const timer = ref();
-
-onMounted(() => {
-  timer.value = setInterval(() => {
-    time.value = new Date().toLocaleTimeString();
-    console.log(time.value);
-  }, 1000);
-});
-
-const toggleRender = () => {
-  renderComponent.value = !renderComponent.value;
+const newTodo = ref();
+const todos = ref([
+  {
+    id: 1,
+    text: 'Learn HTML',
+  },
+  {
+    id: 2,
+    text: 'Learn JavaScript',
+  },
+  {
+    id: 3,
+    text: 'Learn Vue',
+  },
+]);
+const addTodo = () => {
+  todos.value.push({
+    id: todos.value.length + 1,
+    text: newTodo.value,
+  });
+  newTodo.value = '';
 };
-
-// ?? which one is better
-onBeforeMount(() => {
-  clearInterval(timer.value);
-  console.log('beforeDestroy');
-});
-
-// onUnmounted(() => {
-//   clearInterval(timer.value);
-//   console.log('unmounted');
-// });
+// @ts-ignore
+const removeTodo = (todo) => {
+  todos.value = todos.value.filter((t) => t.id !== todo.id);
+};
 </script>
 
 <template>
-  <h2>Vue3 插件示例</h2>
-  <button @click="toggleRender" class="border-solid p-2">点击切换预览</button>
+  <h2>待办事项</h2>
 
-  <div v-if="renderComponent">
-    {{ time }}
-  </div>
+  <form @submit.prevent="addTodo" class="flex">
+    <input v-model="newTodo" placeholder="new todo" class="w-full" required />
+    <button class="border-solid">addTodo</button>
+  </form>
+
+  <ul>
+    <li v-for="todo in todos" :key="todo.id">
+      {{ todo.text }}
+      <button @click="removeTodo(todo)">x</button>
+    </li>
+  </ul>
+  <input :class="{ ['demo-demo']: true }" />
 </template>

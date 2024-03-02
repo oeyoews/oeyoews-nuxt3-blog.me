@@ -34,8 +34,12 @@ let slicedIssues = ref<Issue[]>([]);
 
 slicedIssues.value = issues.value.slice(0, articles.value);
 
+// watchEffect(() => {
+//   slicedIssues.value = issues.value.slice(0, articles.value);
+// });
+
 // 更新列表
-watchEffect(() => {
+watch(articles, () => {
   slicedIssues.value = issues.value.slice(0, articles.value);
 });
 
