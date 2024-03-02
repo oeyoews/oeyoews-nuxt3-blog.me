@@ -6,16 +6,11 @@
   display: none;
 }
 
-.prose a {
-  @apply decoration-[0.1em] no-underline underline-offset-4 transition-all decoration-neutral-400 dark:decoration-neutral-600;
-}
-
 .task-list-item {
   list-style: none !important;
 }
 
 table {
-  /* table-layout: fixed !important; */
   overflow-wrap: anywhere;
 }
 
@@ -26,3 +21,52 @@ svg {
 table svg {
   margin-right: 0.2em;
 }
+
+@layer base {
+  /* iconify patch */
+  svg {
+    display: inline;
+  }
+  h1,
+  h2 {
+    text-wrap: 'text-balance';
+  }
+
+  h1 {
+    @apply text-center;
+  }
+}
+
+.prose .anchor {
+  @apply invisible absolute no-underline;
+  margin-left: -1em;
+  padding-right: 0.5em;
+  width: 80%;
+  max-width: 700px;
+  cursor: pointer;
+}
+
+.anchor:hover {
+  @apply visible;
+}
+
+/* @layer utilities {
+  .prose a {
+    @apply decoration-[0.1em] no-underline underline-offset-4 transition-all decoration-neutral-400 dark:decoration-neutral-600;
+  }
+} */
+
+@layer components {
+  .prose a {
+    @apply decoration-[0.1em] no-underline underline-offset-4 transition-all;
+  }
+}
+
+/* .prose .anchor:after {
+  @apply text-neutral-300 dark:text-neutral-700;
+  content: '#';
+}
+
+.prose *:hover > .anchor {
+  @apply visible;
+} */
