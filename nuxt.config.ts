@@ -34,7 +34,7 @@ export default defineNuxtConfig({
       script: [],
       // noscript: [{ children: 'JavaScript is required' }],
       bodyAttrs: {
-        class: 'text-black bg-white dark:text-[#cdd9e5] dark:bg-[#1c2128]',
+        class: 'text-black bg-white dark:text-dimmed-100 dark:bg-dimmed-900',
       },
     },
   },

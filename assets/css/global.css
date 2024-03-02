@@ -2,12 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-::-webkit-scrollbar {
-  display: none;
+@layer base {
+  svg {
+    display: inline-block;
+  }
+  h1,
+  h2 {
+    text-wrap: 'text-balance';
+  }
+
+  h1 {
+    @apply text-center;
+  }
 }
 
-.prose a {
-  @apply decoration-[0.1em] no-underline underline-offset-4 transition-all decoration-neutral-400 dark:decoration-neutral-600;
+.prose .anchor {
+  @apply invisible absolute no-underline;
+  margin-left: -1em;
+  padding-right: 0.5em;
+  width: 80%;
+  max-width: 700px;
+  cursor: pointer;
+}
+
+.anchor:hover {
+  @apply visible;
+}
+
+/* https://tailwindcss.com/docs/functions-and-directives#using-apply-with-per-component-css */
+@layer utilities {
+  .prose a {
+    @apply no-underline underline-offset-8 transition-all decoration-neutral-300 dark:decoration-dimmed-700 hover:underline;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 .task-list-item {
@@ -15,12 +45,7 @@
 }
 
 table {
-  /* table-layout: fixed !important; */
   overflow-wrap: anywhere;
-}
-
-svg {
-  display: inline-block;
 }
 
 table svg {
