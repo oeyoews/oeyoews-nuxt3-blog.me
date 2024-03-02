@@ -33,7 +33,7 @@ export default defineNuxtConfig({
       ],
       script: [],
       // noscript: [{ children: 'JavaScript is required' }],
-      bodyAttrs: {
+      htmlAttrs: {
         class: 'text-black bg-white dark:text-dimmed-100 dark:bg-dimmed-900',
       },
     },

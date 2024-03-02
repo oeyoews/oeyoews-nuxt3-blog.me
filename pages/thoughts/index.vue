@@ -47,12 +47,14 @@ useHead({
 
 <template>
   <template v-for="post in slicedIssues" :key="post.number">
+    <!-- list -->
     <ArticleList>
+      <!-- heading -->
       <NuxtLink :to="`/thoughts/${post.number}`" class="no-underline">
         <ArticleH2> {{ post.title }} </ArticleH2>
       </NuxtLink>
-      <div
-        class="flex space-x-2 text-gray-400 items-center justify-start text-sm">
+      <!-- info -->
+      <CardInfo>
         <NuxtLink
           :to="post.html_url"
           target="_blank"
@@ -65,7 +67,7 @@ useHead({
           #{{ post.number }}
         </NuxtLink>
         <Time :time="post.date.toString().split('T')[0]!" />
-      </div>
+      </CardInfo>
     </ArticleList>
   </template>
   <!-- TODO: 分开加载数据 -->

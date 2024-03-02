@@ -39,6 +39,5 @@ https://blog2s.vercel.app
 * xxx.post usage
 * use degit to get content
 * blog sort use script instead of html to organize
-* issue comment body for github api
 * html 生成的 `<!--[->` how to remove
 -->

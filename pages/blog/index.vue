@@ -20,7 +20,9 @@ useHead({
             <ArticleH2>
               {{ post.title }}
             </ArticleH2>
-            <Time :time="String(post.date).split(' ')[0]" />
+            <CardInfo>
+              <Time :time="String(post.date).split(' ')[0]" />
+            </CardInfo>
           </NuxtLink>
         </ArticleList>
       </template>

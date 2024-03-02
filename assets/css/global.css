@@ -30,9 +30,10 @@
 }
 
 /* https://tailwindcss.com/docs/functions-and-directives#using-apply-with-per-component-css */
+/* ？？？如果没有 prose，a 也会收到影响 */
 @layer utilities {
   .prose a {
-    @apply no-underline underline-offset-8 transition-all decoration-neutral-300 dark:decoration-dimmed-700 hover:underline;
+    @apply no-underline underline-offset-4 transition-all decoration-neutral-300 dark:decoration-dimmed-700;
   }
 }
 
