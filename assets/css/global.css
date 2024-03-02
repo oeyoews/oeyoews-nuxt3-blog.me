@@ -2,30 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-::-webkit-scrollbar {
-  display: none;
-}
-
-.task-list-item {
-  list-style: none !important;
-}
-
-table {
-  overflow-wrap: anywhere;
-}
-
-svg {
-  display: inline-block;
-}
-
-table svg {
-  margin-right: 0.2em;
-}
-
 @layer base {
-  /* iconify patch */
   svg {
-    display: inline;
+    display: inline-block;
   }
   h1,
   h2 {
@@ -62,11 +41,18 @@ table svg {
   }
 }
 
-/* .prose .anchor:after {
-  @apply text-neutral-300 dark:text-neutral-700;
-  content: '#';
+::-webkit-scrollbar {
+  display: none;
 }
 
-.prose *:hover > .anchor {
-  @apply visible;
-} */
+.task-list-item {
+  list-style: none !important;
+}
+
+table {
+  overflow-wrap: anywhere;
+}
+
+table svg {
+  margin-right: 0.2em;
+}
