@@ -29,15 +29,10 @@
   @apply visible;
 }
 
-/* @layer utilities {
+/* https://tailwindcss.com/docs/functions-and-directives#using-apply-with-per-component-css */
+@layer utilities {
   .prose a {
-    @apply decoration-[0.1em] no-underline underline-offset-4 transition-all decoration-neutral-400 dark:decoration-neutral-600;
-  }
-} */
-
-@layer components {
-  .prose a {
-    @apply decoration-[0.1em] no-underline underline-offset-4 transition-all;
+    @apply no-underline underline-offset-8 transition-all decoration-neutral-300 dark:decoration-dimmed-700 hover:underline;
   }
 }
 
