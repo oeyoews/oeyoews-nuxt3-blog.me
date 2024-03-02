@@ -2,9 +2,9 @@
 import VueMarkdown from '@/components/Markdown';
 
 const { slug } = useRoute().params;
-let issue = ref<Issue>();
+const issue = ref<Issue>();
 
-let { data } = await useFetch(`/api/id/${slug}`, {
+const { data } = await useFetch(`/api/id/${slug}`, {
   server: true, // Enable server-side rendering, but if not enable how to fix that
   method: 'GET',
   // cache: 'force-cache',
@@ -59,7 +59,7 @@ useHead({
               " />
           </CardInfo>
           <Article>
-            <VueMarkdown :source="comment.body" />
+            <VueMarkdown :source="comment.body!" />
           </Article>
         </ArticleList>
       </NuxtLink>

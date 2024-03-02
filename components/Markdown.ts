@@ -25,7 +25,7 @@ import MarkdownItFootnote from 'markdown-it-footnote';
 import MarkdownItContainer from 'markdown-it-container';
 
 // new MarkdownIt().render;
-const VueMarkdown: Component = defineComponent({
+const VueMarkdown = defineComponent({
   name: 'VueMarkdown',
   props: {
     source: {
