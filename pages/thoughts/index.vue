@@ -30,9 +30,6 @@ issues.value = issues.value.filter(
 );
 
 // NOTE: 如果列表查询 content 使用 命令式写法，下面代码可以省去，否则 html 中的 v-if 注释太多
-let slicedIssues = ref<Issue[]>([]);
-
-slicedIssues.value = issues.value.slice(0, articles.value);
 
 // watchEffect(() => {
 //   slicedIssues.value = issues.value.slice(0, articles.value);
@@ -40,7 +37,7 @@ slicedIssues.value = issues.value.slice(0, articles.value);
 
 // 更新列表
 watch(articles, () => {
-  slicedIssues.value = issues.value.slice(0, articles.value);
+  issues.value = issues.value.slice(0, articles.value);
 });
 
 useHead({
@@ -50,7 +47,7 @@ useHead({
 </script>
 
 <template>
-  <template v-for="post in slicedIssues" :key="post.number">
+  <template v-for="post in issues" :key="post.number">
     <!-- list -->
     <ArticleList>
       <!-- heading -->
