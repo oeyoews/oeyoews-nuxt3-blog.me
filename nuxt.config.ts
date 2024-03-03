@@ -22,12 +22,13 @@ export default defineNuxtConfig({
   ],
   routeRules: {
     '/thoughts': { swr: true },
-    '/api/**': { cors: true },
+    '/api/**': { cors: false },
   },
   app: {
     // TODO: bug for transition
     // pageTransition: { name: 'page', mode: 'out-in' },
     keepalive: true,
+
     head: {
       meta: [
         { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
@@ -40,6 +41,7 @@ export default defineNuxtConfig({
       // noscript: [{ children: 'JavaScript is required' }],
       htmlAttrs: {
         class: 'text-black bg-white dark:text-dimmed-100 dark:bg-dimmed-900',
+        lang: 'en',
       },
     },
   },
