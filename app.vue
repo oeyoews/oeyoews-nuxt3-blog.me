@@ -1,3 +1,12 @@
+<script setup>
+definePageMeta({
+  key: (route) => route.fullPath,
+  keepalive: {
+    // include: [''],
+    include: ['/blog/[slug]', '/thoughts/[slug]', '/blog', '/thoughts'],
+  },
+});
+</script>
 <template>
   <NuxtLoadingIndicator :height="2" />
   <NuxtLayout>
