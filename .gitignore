@@ -50,5 +50,6 @@ content/test.ts
 .nuxt/
 # content/
 .output
+dist/
 .env
 .data
