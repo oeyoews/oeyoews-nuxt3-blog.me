@@ -1,5 +1,5 @@
 <script setup lang="ts">
-let issues = ref<Issue[]>([]);
+// let issues = ref<Issue[]>([]);
 let pages = ref(0);
 
 const articles = useState('articles-thoughts', () => 10);
@@ -13,15 +13,17 @@ const { data: datainfo } = await useFetch('/api/info', {
 
 pages.value = Math.ceil(datainfo.value as number) / 30;
 
+let issues: Issue[] = [];
 for (let i = 0; i < pages.value; i++) {
   const { data } = await useFetch(`/api/issue/${i + 1}`, {
     server: true,
     cache: import.meta.dev ? 'default' : 'force-cache',
   });
-  issues.value.push(...(data.value as Issue[]));
+  // issues.value.push(...(data.value as Issue[]));
+  issues.push(...(data.value as Issue[]));
 }
 
-issues.value = issues.value.filter(
+issues = issues.filter(
   (issue) =>
     !(
       issue.state_reason === 'not_planned' ||
@@ -29,15 +31,20 @@ issues.value = issues.value.filter(
     )
 );
 
-const totalArticles = issues.value.length;
+const totalArticles = issues.length;
 
 // NOTE: 如果列表查询 content 使用 命令式写法，下面代码可以省去，否则 html 中的 v-if 注释太多
 
-const slicedIssues = ref<Issue[]>([]);
+// Vue 的计算属性会自动追踪响应式依赖。
+const slicedIssues = computed(() => {
+  return issues.slice(0, articles.value);
+});
+
+// const slicedIssues = ref<Issue[]>([]);
 
 // TIPS: 类似于 useeffect，首次会自动执行，自动收集依赖，更新函数
 watchEffect(() => {
-  slicedIssues.value = issues.value.slice(0, articles.value);
+  // slicedIssues.value = issues.value.slice(0, articles.value);
 });
 
 // TIPS: watch 更像带有依赖的 useeffect，只要依赖发生变化就会执行
