@@ -22,7 +22,7 @@ export default defineNuxtConfig({
   ],
   routeRules: {
     '/thoughts': { swr: true },
-    '/api/**': { cors: false },
+    '/api/**': { cors: true },
   },
   app: {
     // TODO: bug for transition
