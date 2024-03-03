@@ -23,6 +23,7 @@ export default defineNuxtConfig({
   app: {
     // TODO: bug for transition
     // pageTransition: { name: 'page', mode: 'out-in' },
+    keepalive: true,
     head: {
       meta: [
         { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
