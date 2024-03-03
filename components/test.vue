@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const newTodo = ref();
+const vFocus = (v: any) => v && v.focus();
 const todos = ref([
   {
     id: 1,
@@ -41,5 +42,5 @@ const removeTodo = (todo) => {
       <button @click="removeTodo(todo)">x</button>
     </li>
   </ul>
-  <input :class="{ ['demo-demo']: true }" />
+  <input :class="{ ['demo-demo']: true }" v-focus />
 </template>
