@@ -21,7 +21,7 @@ export default defineNuxtConfig({
     // '@nuxt/fonts'
   ],
   routeRules: {
-    '/thoughts': { swr: true },
+    '/thoughts': { isr: 60 },
     '/api/**': { cors: true },
   },
   app: {
