@@ -31,10 +31,12 @@ issues.value = issues.value.filter(
 
 // NOTE: 如果列表查询 content 使用 命令式写法，下面代码可以省去，否则 html 中的 v-if 注释太多
 
+// TIPS: 类似于 useeffect，首次会自动执行，自动收集依赖，更新函数
 // watchEffect(() => {
 //   slicedIssues.value = issues.value.slice(0, articles.value);
 // });
 
+// TIPS: watch 更像带有依赖的 useeffect，只要依赖发生变化就会执行
 // 更新列表
 watch(articles, () => {
   issues.value = issues.value.slice(0, articles.value);
