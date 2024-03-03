@@ -21,8 +21,9 @@ export default defineNuxtConfig({
     // '@nuxt/fonts'
   ],
   routeRules: {
-    '/thoughts': { isr: 60 },
+    '/thoughts': { isr: 60 }, // 静态更新
     '/api/**': { cors: true },
+    '/': { prerender: true }, // ssg 下 没区别
   },
   app: {
     // TODO: bug for transition
