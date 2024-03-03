@@ -17,9 +17,13 @@ export default defineNuxtConfig({
     'nuxt-icon',
     '@nuxt/content',
     '@nuxt/image',
-    '@pinia/nuxt',
+    // '@pinia/nuxt',
     // '@nuxt/fonts'
   ],
+  routeRules: {
+    '/thoughts': { swr: true },
+    '/api/**': { cors: true },
+  },
   app: {
     // TODO: bug for transition
     // pageTransition: { name: 'page', mode: 'out-in' },
