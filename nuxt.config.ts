@@ -17,6 +17,7 @@ export default defineNuxtConfig({
     'nuxt-icon',
     '@nuxt/content',
     '@nuxt/image',
+    // '@nuxtjs/mdc',
     // '@pinia/nuxt',
     // '@nuxt/fonts'
   ],

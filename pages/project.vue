@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import VueMarkdown from '~/components/Markdown';
 
-const { data } = useFetch(
+const { data: readme } = useFetch(
   'https://cdn.jsdelivr.net/gh/oeyoews/oeyoews@main/README.md',
   {
     cache: 'default',
@@ -15,6 +15,6 @@ const { data } = useFetch(
   <ArticleH1> 个人项目 </ArticleH1>
   <ArticleHr />
   <Article>
-    <VueMarkdown :source="data" v-if="data" />
+    <VueMarkdown :source="readme" v-if="readme" />
   </Article>
 </template>
