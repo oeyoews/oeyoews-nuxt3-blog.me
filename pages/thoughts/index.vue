@@ -69,15 +69,9 @@ useHead({
       </NuxtLink>
       <!-- info -->
       <CardInfo>
-        <NuxtLink
-          :to="post.html_url"
-          target="_blank"
+        <NuxtLink :to="post.html_url" target="_blank"
           class="text-gray-400 flex items-center transition-all delay-100 underline group">
-          <Icon
-            name="carbon:logo-github"
-            color=""
-            size="18"
-            class="mr-2 group-hover:animate-spin" />
+          <Icon name="carbon:logo-github" color="" size="18" class="mr-2 group-hover:animate-spin" />
           #{{ post.number }}
         </NuxtLink>
         <Time :time="post.date.toString().split('T')[0]!" />
@@ -86,4 +80,5 @@ useHead({
   </template>
   <!-- TODO: 分开加载数据 -->
   <LoadMore @click="(n) => (articles += n)" v-if="articles < totalArticles" />
+
 </template>
